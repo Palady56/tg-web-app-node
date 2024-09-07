@@ -65,7 +65,7 @@ app.post('/web-data', async (req, res) => {
       type: "article",
       id: queryId,
       title: "Successful purchase",
-      input_message_content: {message_text: "You purchased goods for the amount" + products} // totalPrice repalce
+      input_message_content: {message_text: `You purchased goods for the amount ${totalPrice}, ${products.map(item => item.title).join(", ")}`}
     })
     return res.status(200)
 
